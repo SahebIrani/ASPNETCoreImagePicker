@@ -19,7 +19,7 @@
 		@*action="/Home/Basic"*@
 		<form asp-controller="Home" asp-action="Basic" class="form-horizontal" enctype="multipart/form-data">
 			<section class="form-group">
-				<label class="control-label col-md-3">Upload Images</label>
+				<label class="control-label col-md-3">Upload Image</label>
 				<article class="col-md-8">
 					<section class="row">
 						<div id="coba"></div>
@@ -42,7 +42,7 @@
 		<br>
 		<article class="form-horizontal">
 			<section class="form-group">
-				<label class="control-label col-md-3">Upload Images Ajax</label>
+				<label class="control-label col-md-3">Upload Image</label>
 				<article class="col-md-8">
 					<section class="row">
 						<div id="coba2"></div>
@@ -54,7 +54,7 @@
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	@*<script src="https://www.jqueryscript.net/demo/Multiple-Image-Picker-jQuery-Spartan/spartan-multi-image-picker.min.js"></script>*@
-	<script src="~/lib/Multiple-Image-Picker-jQuery-Spartan/src/js/spartan-multi-image-picker.js"></script>
+	<script src="~/lib/Multiple-Image-Picker-jQuery-Spartan/dist/js/spartan-multi-image-picker.js"></script>
 
 	<script>
 		$(function () {
@@ -111,7 +111,7 @@
 					loaderIcon: '<i class="fas fa-sync fa-spin"></i>',
 					url: '/Home/Direct',
 					additionalParam: {
-						testParam: 'Upload Shod .. !!!!'
+						name: 'testParam'
 					},
 					success: function (data, textStatus, jqXHR) {
 						alert(textStatus);

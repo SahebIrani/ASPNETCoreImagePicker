@@ -35,7 +35,7 @@ namespace Demo.Controllers
 		{
 			if (testParam == null) testParam = "Khaliye .. !!!!";
 
-			IFormFileCollection files = HttpContext.Request.Form.Files;
+			IFormFileCollection? files = HttpContext.Request.Form.Files;
 
 			if (!files.Any()) return Ok(testParam);
 

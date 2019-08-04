@@ -37,8 +37,6 @@ namespace Demo.Controllers
 
 			IFormFileCollection files = HttpContext.Request.Form.Files;
 
-			if (!files.Any()) return Ok(testParam);
-
 			IList<string> fileNmaes = new List<string>();
 
 			foreach (IFormFile file in files)

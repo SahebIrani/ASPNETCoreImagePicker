@@ -14,9 +14,6 @@ namespace Demo.Controllers
 		[HttpPost]
 		public IActionResult Basic(IFormFile fileUpload, IFormFile[] fileUploads)
 		{
-			if (fileUpload == null || !fileUploads.Any())
-				return RedirectToAction(nameof(Index));
-
 			IList<string> fileNmaes = new List<string>
 			{
 				fileUpload.FileName
@@ -31,13 +28,9 @@ namespace Demo.Controllers
 			return Ok(fileNmaes);
 		}
 
-		public IActionResult Direct(string? testParam)
+		public IActionResult Direct(string testParam)
 		{
-			if (testParam == null) testParam = "Khaliye .. !!!!";
-
 			IFormFileCollection files = HttpContext.Request.Form.Files;
-
-			if (!files.Any()) return Ok(testParam);
 
 			IList<string> fileNmaes = new List<string>();
 
@@ -49,7 +42,7 @@ namespace Demo.Controllers
 
 			string result = string.Join(",", fileNmaes.ToArray());
 
-			return Ok($"{result} | {testParam}");
+			return Ok($"{result} | ");
 		}
 	}
 }

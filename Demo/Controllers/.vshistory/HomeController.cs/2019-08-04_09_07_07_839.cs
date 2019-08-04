@@ -31,13 +31,9 @@ namespace Demo.Controllers
 			return Ok(fileNmaes);
 		}
 
-		public IActionResult Direct(string? testParam)
+		public IActionResult Direct(string testParam)
 		{
-			if (testParam == null) testParam = "Khaliye .. !!!!";
-
 			IFormFileCollection files = HttpContext.Request.Form.Files;
-
-			if (!files.Any()) return Ok(testParam);
 
 			IList<string> fileNmaes = new List<string>();
 
